@@ -27,7 +27,8 @@ def yesno(question):
         print("You have to answer with y, yes, n or no.", file=sys.stderr)
 
 
-buildout = "${buildout:directory}"
+#buildout = "${buildout:directory}"
+buildout = os.path.abspath(os.path.join(os.path.basename(__file__), '../'))
 prefix = os.path.expanduser("${install-links:prefix}")
 bindir = os.path.join(prefix, 'bin')
 
